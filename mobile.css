@@ -49,9 +49,14 @@
     display: none;
 }
 
-.theme-toggle {
+.nav-actions {
     margin-left: auto;
     margin-right: 0.75rem;
+}
+
+.theme-toggle {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .nav-toggle {
