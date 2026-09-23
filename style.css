@@ -173,6 +173,27 @@ img { max-width: 100%; display: block; }
     background: var(--gray-800);
 }
 
+.nav-cta.btn-resume {
+    background: transparent;
+    color: var(--black);
+    border: 1.5px solid var(--gray-300);
+}
+
+.nav-cta.btn-resume:hover {
+    background: var(--gray-100);
+    border-color: var(--black);
+}
+
+body.dark-mode .nav-cta.btn-resume {
+    color: var(--white);
+    border-color: var(--gray-700);
+}
+
+body.dark-mode .nav-cta.btn-resume:hover {
+    background: var(--gray-800);
+    border-color: var(--white);
+}
+
 .nav-toggle {
     display: none;
     width: 40px;
@@ -447,7 +468,7 @@ img { max-width: 100%; display: block; }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
     margin-top: 2.5rem;
 }
@@ -542,8 +563,29 @@ img { max-width: 100%; display: block; }
     color: var(--gray-600);
     font-size: 0.95rem;
     line-height: 1.8;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     max-width: 680px;
+}
+
+.project-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 750px;
+}
+
+.project-features li {
+    font-size: 0.92rem;
+    color: var(--gray-600);
+    line-height: 1.65;
+    padding-left: 0.25rem;
+}
+
+.project-features strong {
+    color: var(--black);
+    font-weight: 600;
 }
 
 .project-stack {
@@ -646,12 +688,14 @@ img { max-width: 100%; display: block; }
 .cert-preview.oracle-bg { background: #fef2f0; }
 .cert-preview.hplife-bg { background: #eff6ff; }
 .cert-preview.nullclass-bg { background: #f5f3ff; }
+.cert-preview.datacamp-bg { background: #fef3c7; }
 
 body.dark-mode .cert-preview { background: #1a1a1a; }
 body.dark-mode .cert-preview.hackerrank-bg { background: #0a2616; }
 body.dark-mode .cert-preview.oracle-bg { background: #2a1510; }
 body.dark-mode .cert-preview.hplife-bg { background: #0a1628; }
 body.dark-mode .cert-preview.nullclass-bg { background: #1a1028; }
+body.dark-mode .cert-preview.datacamp-bg { background: #291e0a; }
 
 .cert-file-icon {
     font-size: 2.5rem;
@@ -756,6 +800,13 @@ body.dark-mode .cert-preview.nullclass-bg { background: #1a1028; }
    EDUCATION
    ======================================== */
 
+.edu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
 .edu-card {
     display: flex;
     gap: 1.75rem;
@@ -764,7 +815,6 @@ body.dark-mode .cert-preview.nullclass-bg { background: #1a1028; }
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
     padding: 2.25rem;
-    margin-top: 2.5rem;
     transition: var(--transition);
 }
 
@@ -798,6 +848,12 @@ body.dark-mode .cert-preview.nullclass-bg { background: #1a1028; }
     padding: 0.25rem 0.65rem;
     border-radius: 5px;
     margin-bottom: 0.75rem;
+}
+
+.edu-status-completed {
+    color: #2563eb;
+    background: #eff6ff;
+    border-color: #bfdbfe;
 }
 
 .edu-info h3 {

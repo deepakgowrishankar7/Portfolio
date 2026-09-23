@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Gowri Shankar Enduri — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #334155;
+            --accent: #2563eb;
+            --gray-light: #f8fafc;
+            --border: #e2e8f0;
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            color: var(--primary);
+            background: #f1f5f9;
+            line-height: 1.38;
+            padding: 1.5rem 1rem;
+            font-size: 13px;
+        }
+
+        .no-print-bar {
+            max-width: 820px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-print {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 0.55rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.2s;
+        }
+
+        .btn-print:hover { background: #1e293b; }
+
+        .btn-back {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .resume-container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2.2rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        /* HEADER */
+        .header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-left { flex: 1; }
+
+        .name {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.4px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            font-size: 0.82rem;
+            color: var(--secondary);
+            text-align: right;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover { color: var(--accent); }
+
+        /* SECTIONS */
+        .section { margin-bottom: 1rem; }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--primary);
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* SUMMARY */
+        .summary p {
+            font-size: 0.86rem;
+            color: var(--secondary);
+            line-height: 1.45;
+        }
+
+        /* SKILLS TABLE */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .skills-table td {
+            padding: 0.2rem 0;
+            vertical-align: top;
+        }
+
+        .skills-table td.label {
+            font-weight: 700;
+            color: var(--primary);
+            width: 25%;
+        }
+
+        .skills-table td.value {
+            color: var(--secondary);
+            width: 75%;
+        }
+
+        /* PROJECTS */
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .project-subtitle {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .project-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-decoration: none;
+            margin-left: 0.6rem;
+        }
+
+        .project-links a:hover { color: var(--accent); }
+
+        .project-bullets {
+            list-style-type: square;
+            padding-left: 1.1rem;
+            font-size: 0.84rem;
+            color: var(--secondary);
+        }
+
+        .project-bullets li {
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+        }
+
+        .project-bullets strong { color: var(--primary); }
+
+        /* EDUCATION */
+        .edu-grid-resume {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .edu-degree {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            font-size: 0.82rem;
+            color: var(--secondary);
+        }
+
+        .edu-meta {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: right;
+        }
+
+        .edu-year {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        /* CERTIFICATIONS */
+        .cert-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.35rem 1rem;
+            font-size: 0.83rem;
+        }
+
+        .cert-item { color: var(--secondary); }
+        .cert-item strong { color: var(--primary); }
+
+        /* PERFECT SINGLE-PAGE PRINT RULES */
+        @page {
+            size: letter portrait;
+            margin: 0.35in 0.4in;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+                font-size: 12px;
+            }
+
+            .no-print-bar { display: none !important; }
+
+            .resume-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            .section { margin-bottom: 0.85rem; }
+            .header { margin-bottom: 0.75rem; padding-bottom: 0.5rem; }
+            .name { font-size: 1.6rem; }
+            .title { font-size: 0.95rem; }
+
+            a { text-decoration: none; color: inherit !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-bar">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <button class="btn-print" onclick="window.print()"><i class="fas fa-print"></i> Print / Save 1-Page PDF</button>
+    </div>
+
+    <div class="resume-container">
+        
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="name">DEEPAK GOWRI SHANKAR ENDURI</h1>
+                <div class="title">Java Backend Developer</div>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-location-dot"></i> Eluru, Andhra Pradesh</span>
+                <a href="mailto:deepakgowrishankar7@gmail.com"><i class="fas fa-envelope"></i> deepakgowrishankar7@gmail.com</a>
+                <span>
+                    <a href="https://www.linkedin.com/in/enduri-deepak-gowri-shankar/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;•&nbsp; 
+                    <a href="https://github.com/deepakgowrishankar7" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </span>
+                <a href="https://deepakgowrishankar7.github.io/Portfolio/" target="_blank"><i class="fas fa-globe"></i> Portfolio Website</a>
+            </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section class="section summary">
+            <div class="section-title"><i class="fas fa-user"></i> Professional Summary</div>
+            <p>
+                Motivated <strong>Java Backend Engineer</strong> specializing in designing scalable RESTful web APIs using <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Hibernate (JPA)</strong>, and <strong>MySQL</strong> with stateless <strong>JWT authentication</strong>. Architect of <em>Lets Code Together</em> — a production full-stack platform featuring a Voice AI Technical Interviewer, Cloud IDE (Monaco Engine), AI Pair Programmer with Gemini & Claude APIs, WebSockets, and GitHub Analytics. Proficient in version control (Git/GitHub), containerization (Docker), and cloud deployments (Render, Azure VM).
+            </p>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="section">
+            <div class="section-title"><i class="fas fa-code"></i> Technical Skills</div>
+            <table class="skills-table">
+                <tr>
+                    <td class="label">Backend & Core:</td>
+                    <td class="value">Java, Spring, Spring Boot, Spring MVC, Spring Data JPA, Hibernate (ORM), REST APIs, JWT Security</td>
+                </tr>
+                <tr>
+                    <td class="label">Databases:</td>
+                    <td class="value">MySQL, Relational Schema Design, SQL Queries, Joins, Indexing</td>
+                </tr>
+                <tr>
+                    <td class="label">Cloud, DevOps & Tools:</td>
+                    <td class="value">Git & GitHub, Maven, Docker, Azure (Basic - VM), Render, Postman, WebSockets</td>
+                </tr>
+                <tr>
+                    <td class="label">Testing & AI:</td>
+                    <td class="value">Selenium (Basic), Monaco Editor Engine, Gemini API, Claude API, Brevo API</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="section">
+            <div class="section-title"><i class="fas fa-laptop-code"></i> Featured Project</div>
+            
+            <div class="project-head">
+                <div>
+                    <span class="project-title">Lets Code Together</span>
+                    <span class="project-subtitle">— Full-Stack AI Educational Platform</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://lets-code-together.onrender.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <a href="https://github.com/deepakgowrishankar7/Lets-Code-Together-Showcase" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+            
+            <ul class="project-bullets">
+                <li><strong>Zetrox AI Voice Interviewer:</strong> Live browser-based AI mock technical interviewer using Speech-to-Text & Text-to-Speech (with Sound toggle); dynamically scores candidates on Technical Depth (0–100) and Communication (0–100) with adaptive questions & persistent scorecards.</li>
+                <li><strong>Cloud IDE & Online Compiler:</strong> Integrated Microsoft’s Monaco Editor (VS Code engine) handling stdin/stdout, execution visualizer, and compile-time error analysis.</li>
+                <li><strong>Zetrox Pair Programmer:</strong> Built context-aware AI coding assistant leveraging Gemini & Claude APIs to read active code, explain runtime bugs, and provide O(1)/O(N) time & space complexity breakdowns.</li>
+                <li><strong>Analytics & Collaboration Engine:</strong> Implemented GitHub-style contribution heatmap matrix, interview history tracker, and WebSockets powering live multiplayer coding rooms & messaging.</li>
+            </ul>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="section">
+            <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+            
+            <div class="edu-grid-resume">
+                <div class="edu-item">
+                    <div>
+                        <div class="edu-degree">Bachelor of Technology (B.Tech) — Computer Science & Engineering</div>
+                        <div class="edu-school">Sir C.R. Reddy College of Engineering, Eluru (JNTU Kakinada)</div>
+                    </div>
+                    <div class="edu-meta">
+                        <div>CGPA: 7.33 / 10</div>
+                        <div class="edu-year">Expected 2027</div>
+                    </div>
+                </div>
+
+                <div class="edu-item">
+                    <div>
+                        <div class="edu-degree">Intermediate (MPC)</div>
+                        <div class="edu-school">Sri Chaitanya Junior College, Kovvur (BIEAP)</div>
+                    </div>
+                    <div class="edu-meta">
+                        <div>Score: 86.1%</div>
+                        <div class="edu-year">Passed 2023</div>
+                    </div>
+                </div>
+
+                <div class="edu-item">
+                    <div>
+                        <div class="edu-degree">Secondary School Certificate (SSC)</div>
+                        <div class="edu-school">Sri Chaitanya Techno School, Kovvur (BSEAP)</div>
+                    </div>
+                    <div class="edu-meta">
+                        <div>Score: 86.5%</div>
+                        <div class="edu-year">Passed 2021</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section class="section">
+            <div class="section-title"><i class="fas fa-certificate"></i> Certifications & Achievements</div>
+            <div class="cert-list">
+                <div class="cert-item">🎓 <strong>GitHub Fundamentals</strong> — DataCamp</div>
+                <div class="cert-item">🎓 <strong>Java Certification</strong> — DataValley</div>
+                <div class="cert-item">🎓 <strong>Java Basics</strong> — HackerRank</div>
+                <div class="cert-item">🎓 <strong>Java Quiz Badge</strong> — Oracle</div>
+                <div class="cert-item">🎓 <strong>DSA Certificate</strong> — HP Life</div>
+                <div class="cert-item">🎓 <strong>Web Development</strong> — NullClass</div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
